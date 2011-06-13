@@ -114,6 +114,7 @@ div.arrow-up {
 	font-size:0px;
 	line-height:0px;
 }
+
 .item {
 	color:white;
 	border-radius: 5px;
@@ -131,10 +132,15 @@ div.arrow-up {
 	-moz-box-shadow: 5px 5px 5px #999;
 	-webkit-box-shadow: 5px 5px 5px #999;
 	box-shadow: 5px 5px 5px #999;
+	
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
 }
 .item:hover {
 	text-shadow: 1px 1px 2px #AAA;
 	opacity: 1;
+	font-size:12pt;
 }
 .item:active {
 	-moz-box-shadow: 0px 0px 10px #FFF,           0px 0px 10px rgba(255,255,0,0);
