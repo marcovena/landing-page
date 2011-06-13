@@ -190,7 +190,7 @@ div.arrow-up {
 
 #home-footer {
 	background: url(img/footer-bg.png) top left repeat-x ;
-	height: 200px;
+	//height: 200px;
 	padding: 10px;
 	-moz-box-shadow:  1px 1px 1px #ccc;
 	-webkit-box-shadow:  1px 1px 1px #ccc;
