@@ -1,0 +1,502 @@
+/*
+	Main stylesheet: contains CSS normalization, base styles, typography with a vertical rhythm and some mobile-first media queries
+
+	Credit is left where credit is due
+	Much ispiration was taken from the normalize.css project: http://necolas.github.com/normalize.css/
+*/
+
+/* `HTML5 elements display-role
+---------------------------------------- */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, dialog {
+	display: block;
+}
+audio[controls], video, canvas {
+	display: inline-block;
+	*display: inline; /* IE7 and older */
+	*zoom: 1; /* IE7 and older */
+}
+
+/* `Base structure
+---------------------------------------- */
+html {
+	height: 100%;
+	font-size: 100%;
+	overflow-y: scroll; /* Force a scrollbar in non-IE */
+	-webkit-text-size-adjust: 100%; /* Remove iOS text size adjust without disabling user zoom */
+}
+body {
+	margin: 0;
+	min-height: 100%;
+}
+body {
+	font: 16px/1.625 Georgia, serif;
+	*font-size: 1em; /* IE7 and older: IE can't resize px based text and most mobiles don't default the text to 16px */
+	color: #222; /* Black on white is too much contrast, #222 is a lot better */
+}
+p, blockquote, q, pre, address, hr, code, samp, dl, ol, ul, form, table, fieldset, menu, h4, h5, h6, img {
+	margin: 0 0 1.625em;
+}
+
+/* `Headings and small
+---------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+	font-family: 'Palatino', 'Palatino Linotype', 'Book Antiqua', 'FreeSerif', serif;
+}
+h1 {
+	font-size: 4.25em; /* 68px */
+	line-height: 1.1471em;
+	margin: 0 0 0.3824em;
+}
+h2 {
+	font-size: 2.625em; /* 42px */
+	line-height: 1.2381em;
+	margin: 0 0 0.619em;	
+}
+h3 {
+	font-size: 1.625em; /* 26px */
+	line-height: 1em;
+	margin: 0 0 1em;
+}
+h4, h5, h6 {
+	font-size: 1em;
+}
+small {
+	font-size: 0.625em; /* 10px */
+	margin: 0 0 2.6em;
+}
+
+/* `Code
+---------------------------------------- */
+/* Allows line wrapping of 'pre' */
+pre {
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+pre, code, kbd, samp, tt {
+	font: 1em/1.625em Menlo, Consolas, 'DejaVu Sans Mono', Monaco, monospace;
+}
+
+/* `Tables
+---------------------------------------- */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+th {
+	text-align: left;
+}
+tr, th, td {
+	padding-right: 1.625em;
+	border-bottom: 1px solid #333;
+}
+
+/* `Forms
+---------------------------------------- */
+form {
+	margin: 0;
+}
+fieldset {
+	border: 0;
+}
+textarea {
+	overflow: auto;
+	vertical-align: top;
+}
+/* Same font settings as body */
+button, input, select, textarea {
+	font: 1em/1.625em Georgia, serif;
+	color: #222;
+}
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+	cursor: pointer;
+	-webkit-appearance: button;
+	appearance: button;
+}
+input[type="checkbox"], input[type="radio"] {
+	box-sizing: border-box;
+}
+input[type="search"] {
+	-webkit-appearance: textfield;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+/* `Quotes
+---------------------------------------- */
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+blockquote, q, cite {
+	font-style: italic;
+}
+blockquote {
+	padding-left: 1.625em;
+	border-left: 3px solid #ccc;
+}
+blockquote > p {
+	padding: 0;
+}
+
+/* `Lists
+---------------------------------------- */
+ul, ol {
+	list-style-position: inside;
+	padding: 0;
+}
+li ul, li ol {
+	margin: 0 1.625em;
+}
+dl dd {
+	margin-left: 1.625em;
+}
+
+/* `Hyperlinks
+---------------------------------------- */
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a:focus {
+	outline: thin dotted;
+}
+/* Better CSS outline suppression: people.opera.com/patrickl/experiments/keyboard/test */
+a:hover, a:active {
+	outline: none;
+}
+
+/* `Figures and images
+---------------------------------------- */
+figure {
+	margin: 0;
+}
+img {
+	border: 0;
+	-ms-interpolation-mode: bicubic; /* Improve IE's resizing of images: http://css-tricks.com/ie-fix-bicubic-scaling-for-images */
+}
+
+/* `Abbreviations
+---------------------------------------- */
+abbr[title], dfn[title] {
+	border-bottom: 1px dotted #333;
+	cursor: help;
+}
+
+/* `Marked/inserted and deleted text
+---------------------------------------- */
+mark, ins {
+	background: #ff0;
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* `Others
+---------------------------------------- */
+strong, b, dt, th {
+	font-weight: bold;
+}
+dfn {
+	font-style: italic;
+}
+var, address {
+	font-style: normal;
+}
+/* Position 'sub' and 'sup' without affecting line-height: gist.github.com/413930 */
+sub, sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	top: -0.5em;
+}
+sub {
+	bottom: -0.25em;
+}
+
+/* `Clearfix hack: http://nicolasgallagher.com/micro-clearfix-hack/
+---------------------------------------- */
+.cf:before, .cf:after { 
+	content: ""; 
+	display: table; 
+}
+.cf:after { 
+	clear: both; 
+}
+.cf { 
+	*zoom: 1;
+}
+
+/* Default (mobile) styles
+---------------------------------------- */
+/* Centering pages without a wrapper: http://www.camendesign.com/code/developpeurs_sans_frontieres */
+html {
+	background: none;
+}
+body {
+	background: none;
+	width: 92%;
+	margin: 0 auto;
+}
+
+/* Wide mobile devices styles
+---------------------------------------- */
+@media only screen and (min-width: 480px) {
+	body {
+		
+	}
+}
+
+/* Tablets/netbooks styles
+---------------------------------------- */
+@media only screen and (min-width: 768px) { 
+	body {
+		
+	}
+}
+
+/* Desktop devices styles
+---------------------------------------- */
+@media only screen and (min-width: 1024px) { 
+	body {
+
+	}
+}
+
+/* Print styles
+---------------------------------------- */
+@media print {
+	* {
+		background: transparent !important;
+		color: black !important; /* The woes of CSS color in print typography: sanbeiji.com/archives/953 */
+		text-shadow: none !important;
+		filter: none !important;
+		-ms-filter: none !important;
+	}
+	a, a:visited {
+		color: #333 !important;
+		text-decoration: underline;
+	}
+	a[href]:after {
+		content: " (" attr(href) ")";
+	}
+	abbr[title]:after {
+		content: " (" attr(title) ")";
+	}
+	/* Do not show javascript and internal links */
+	a[href^="javascript:"]:after, a[href^="#"]:after {
+		content: ""; 
+	}
+	/* Printing Tables: css-discuss.incutio.com/wiki/Printing_Tables */
+	thead {
+		display: table-header-group;
+	}
+	tr, img {
+		page-break-inside: avoid;
+	}
+	@page {
+		margin: 0.5cm;
+	}
+	p, h2, h3 {
+		orphans: 3;
+		widows: 3;
+	}
+	h2, h3{
+		page-break-after: avoid;
+	}
+}
+
+
+
+
+/* ================================================================================= */
+
+/*-------------------*/
+/* GENERAL SETTINGS  */
+/*-------------------*/
+body {
+	height:100%;
+	font: 12px/12px  "Lucida Sans", "Lucida Grande", sans-serif;
+	color: #FFF;
+}
+a {
+	text-decoration:none;
+	color: #FFF;
+}
+a:hover {
+	text-decoration:none;
+	color: #0285da;
+}
+.shadow {
+	-moz-box-shadow: 5px 5px 5px #ccc;
+	-webkit-box-shadow: 5px 5px 5px #ccc;
+	box-shadow: 5px 5px 5px #ccc;
+}
+/* Generated by Font Squirrel (http://www.fontsquirrel.com) on May 27, 2011 */
+
+/*
+ @font-face {
+ font-family: 'DekarRegular';
+ src: url('../fonts/dekar-webfont.eot');
+ src: url('../fonts/dekar-webfont.eot?#iefix') format('embedded-opentype'),
+ url('../fonts/dekar-webfont.woff') format('woff'),
+ url('../fonts/dekar-webfont.ttf') format('truetype'),
+ url('../fonts/dekar-webfont.svg#DekarRegular') format('svg');
+ font-weight: normal;
+ font-style: normal;
+
+ }
+ */
+
+#background {
+	background: white url(img/glossy-metal.png) repeat top left;
+}
+.wrap {
+	width:900px;
+	height:100%;
+	margin:0px auto;
+}
+h2.welcome {
+	font-size: 32pt;
+	color: #DDD;
+	text-shadow: 0px 1px 2px #555;
+	text-align: center;
+	background-color: #777;
+	-webkit-box-shadow: inset 0px 1px 1px #3b3b3d;
+	-moz-box-shadow: inset 0px 1px 1px #3b3b3d;
+	box-shadow: inset 0px 1px 1px #3b3b3d;
+	padding: 5px 5px;
+	opacity: 0.6;
+}
+/* TRIANGLES */
+div.arrow-up {
+	width:0px;
+	height:0px;
+	border-left:50px solid transparent;
+	/* left arrow slant */
+	border-right:50px solid transparent;
+	/* right arrow slant */
+	border-bottom:50px solid #81f94e;
+	/* bottom, add background color here */
+	font-size:0px;
+	line-height:0px;
+}
+.item {
+	color:white;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	text-align: center;
+	font-weight: bold;
+	opacity:0.85;
+	padding: 10px 20px;
+	width:100px;
+	float:left;
+	max-width: 400px;
+	min-width:100px;
+	margin: 100px 4px 50px 4px;
+	-moz-box-shadow: 5px 5px 5px #999;
+	-webkit-box-shadow: 5px 5px 5px #999;
+	box-shadow: 5px 5px 5px #999;
+}
+.item:hover {
+	text-shadow: 1px 1px 2px #AAA;
+	opacity: 1;
+}
+.item:active {
+	-moz-box-shadow: 0px 0px 10px #FFF,           0px 0px 10px rgba(255,255,0,0);
+	-webkit-box-shadow: 0px 0px  10px #FFF,         0px 0px 10px rgba(255,255,0,0);
+	box-shadow: 0px 0px  10px #FFF,         0px 0px 10px rgba(255,255,0,0);
+}
+.first {
+	background-color: #2887c5;
+}
+.second {
+	background-color:#eb4f4e ;
+}
+.third {
+	background-color: #bc4985;
+}
+.fourth {
+	background-color: #5fb939;
+}
+.fifth {
+	background-color: #e78040;
+}
+.sixth {
+	background-color: #3e8c7d;
+}
+.deg-rotation {
+	-webkit-transform: rotate(-30deg);
+	-moz-transform: rotate(-30deg);
+	-o-transform: rotate(-30deg);
+	-ms-transform: rotate(-30deg);
+	transform: rotate(-50deg);
+}
+.link-container {
+	margin-bottom:50px;
+	height: 200px;
+}
+.divider-line {
+	width:100%;
+	height:0px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid white;
+	opacity: 0.5;
+	margin: 50px 0 50px 0;
+}
+/*
+ body * {border:1px solid red; }
+ */
+
+#home-footer {
+	background: url(img/footer-bg.png) top left repeat-x ;
+	height: 200px;
+	padding: 10px;
+	-moz-box-shadow:  1px 1px 1px #ccc;
+	-webkit-box-shadow:  1px 1px 1px #ccc;
+	box-shadow: 1px 1px 1px #ccc;
+	overflow: hidden;
+}
+#home-footer .column {
+	float:left;
+	margin-left:10px;
+	margin-right:20px;
+	padding:8px;
+	text-shadow: #333 1px 1px 1px;
+	width:240px;
+}
+.column:last-child {
+	margin-right: 0;
+}
+#home-footer .column h4 {
+	margin:10px 0;
+	font-size: 1.2em;
+}
+.column ul {
+	list-style: circle;
+	list-style-position: inside;
+}
+.column ul li {
+	line-height: 1.3;
+}
+.column ul li a {
+	color: #EEE;
+}
+.column ul li a:hover {
+	color:#FFF;
+}
